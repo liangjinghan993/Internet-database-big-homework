@@ -1149,7 +1149,7 @@ $this->title = '抵制核污水';
             <div class="row gy-4">
 
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-                    <a href="https://gitee.com/liang-jinghan888/internet-database2023" target="_blank">
+                    <a href="https://github.com/liangjinghan993/Internet-database-big-homework" target="_blank">
                         <div class="member">
                             <div class="member-img">
                                 <img src="../../common/static/images/team/lyw.jpg" class="img-fluid" alt="">
