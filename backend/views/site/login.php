@@ -3,7 +3,7 @@
 
 /**
  * Team:  抵制核污水小队
- * Created by 尚然.
+ * Created by 尚然
  * 后台登录页面
 
 /* @var $this yii\web\View */

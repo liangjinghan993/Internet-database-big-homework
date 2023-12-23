@@ -3,7 +3,7 @@
 /**
  * Team: 抵制核污水小队
  * Created by 尚然
- * CRUD接口
+ * 问答CRUD接口
  */
 
 namespace backend\controllers;
