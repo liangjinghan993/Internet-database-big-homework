@@ -1,8 +1,6 @@
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
--- ----------------------------
--- Table structure for user
--- ----------------------------
+
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`  (
   `id` int(0) NOT NULL AUTO_INCREMENT,
@@ -22,15 +20,10 @@ CREATE TABLE `user`  (
   UNIQUE INDEX `password_reset_token`(`password_reset_token`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
--- ----------------------------
--- Records of user
--- ----------------------------
 INSERT INTO `user` VALUES (1, 'admin', 'dOukCdzkuR_bNC7m5w4MX7dIM8-xpDU0', '$2y$13$tyAaDKSNeoqImx7r3eKIuedpSANxoyzAvv30JxhyNdXreCxJ7CaLG', 'uClvX1oKNbKVCykeuk4BimMBZfejNprA_1675525876', 'admin@gmail.com', 10, 1674014197, 1675525876, 'IIlCzFSOBKAV61Q-pBPVXdiSrcBW2AcB_1674014197', 0);
 INSERT INTO `user` VALUES (2, 'test', '8WxDxmV_G65cMPJin4-bP8DIPhiiHeX3', '$2y$13$qSFtv0a8j9/xdth6lUC9HuYtDOUwNUSxnUWjncto4nrhn/is.ntqO', NULL, 'test@gmail.com', 10, 1674014280, 1674014280, 'uRXxQH0WoMe7BIjWfAr6dariEW_hFwFI_1674014280', 0);
 INSERT INTO `user` VALUES (3, 'user', 'W0ntFZEWpQd8UBTsSxJD8w119azHHlus', '$2y$13$9g/xDBc31hGcVwAsseVzduJdMW6euHXVxPUA9trrcRY7dlmQUROZ.', NULL, 'user@gmain.com', 10, 1675474822, 1675524673, 'lyIN5fYN65AlTk_5valgZI-PcPLjUK0a_1675474822', 1);
 INSERT INTO `user` VALUES (4, 'root', '-MbGxKSd7MVMehBj_JEZtKBVovo_jGm_', '$2y$13$k2hH0ipzEV6SaaCAAxm5re5FtBcQUuZ.Og.uzlnMJL/NTnvt8mDk.', NULL, 'root@gmail.com', 10, 1675526325, 1675526350, 'o0R1EwEPDf2ySlAkoU_EHDqHGPI6xdUE_1675526325', 1);
-
-SET FOREIGN_KEY_CHECKS = 1;
 
 DROP TABLE IF EXISTS `photo`;
 CREATE TABLE `photo`  (
@@ -44,9 +37,6 @@ CREATE TABLE `photo`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
--- ----------------------------
--- Records of photo
--- ----------------------------
 INSERT INTO `photo` VALUES (1, '海洋', '福岛一号核电站3号机组爆炸后的照片', 'photo-1.jpg', '2011年3月11日福岛第一核电站发生严重事故', '美国一家用人工卫星专门拍摄高清晰照片的民间企业14日公布了当天拍摄到的东京电力第一核电站爆炸后的情形照片。从照片可以看到，核电站3号机组发生氢气爆炸后，建筑物外观一片狼藉并向上喷吐白烟。图为爆炸三分钟后的当地时间14日上午11时4分的事故现场。', '美国公布福岛一号核电站3号机组爆炸后的照片');
 INSERT INTO `photo` VALUES (2, '海洋', '清华大学研究团队模拟核污水排放结果', 'photo-2.jpg', '2021年，清华大学就污水排放做了核废水在太平洋扩散机理的实验', '福岛沿岸拥有世界上最强的洋流。通过洋流和雨水，日本核污水将扩散到全球各地。早在2021年，清华大学就污水排放做了核废水在太平洋扩散机理的实验。宏观模拟结果表明，核废水在排放后240天就会到达我国沿岸海域，1200天后将到达北美沿岸并覆盖几乎整个北太平洋。随后，污染物一边在赤道洋流的作用下沿着美洲海岸向南太平洋快速扩散，另一边通过澳大利亚北部海域向印度洋转移。', '数据说｜清华大学研究团队模拟结果：美国受核污水影响程度在后期将高于中国');
 INSERT INTO `photo` VALUES (3, '海洋', '日本核废水污染路径', 'photo-3.jpg', '2023年9月4日私人发表', '随着核废水进入大海，整个中国周边海域和太平洋都会受到核辐射的核废水的扩散影响，并且这个过程会持续1000年甚至1万年也不会消散，而其过程中，核废料进入食物链会彻底改变活细胞，并导致 DNA 突变和组织损伤，从而对人类健康构成威胁。包括 X 射线和核放射性元素。', '日本核废水影响出现了！ 鱼类 蔬菜 开始变异，整个亚洲海域太平洋污染 ，放射物持续1万年不会消散 ！');
@@ -72,40 +62,11 @@ CREATE TABLE `price`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
--- ----------------------------
--- Records of price
--- ----------------------------
 INSERT INTO `price` VALUES (1, '食盐',10.87, '袋', 'price-1.jpg', '韩国食盐价格居高不下。韩媒称，目前的盐价比往年高六成以上。一名韩国食盐生产商称，“订单不断增加，仍然卖光了。这种情况十分罕见。”有观点认为，消费者对核污水排海而感到不安，希望在核污水排入海洋之前，多囤一些用海水提取的盐。 ', 2, '食品', '韩国盐价高涨 或为日本排污入海所致 ');
 INSERT INTO `price` VALUES (2, '原油',84.48, '桶', 'price-2.jpg', '本周布伦特原油期货下跌 0.4%，至 84.48 美元/桶。本周伊朗原油供应增加削弱 OPEC+减产效果，国际原油小幅下滑', 1, '材料', '核污水排海致盐化工标的走强，油价有所走弱 ');
 INSERT INTO `price` VALUES (3, '三文鱼', 5000, '公斤', 'price-3.jpg', '除了出口市场受挫外，日本的海产品在国内市场也遭遇了前所未有的冷淡。由于核污水排放引发了民众对食品安全的担忧和恐慌，许多消费者抵制或减少购买。这导致了日本海产品的供过于求和价格暴跌。据报道，在东京都中央批发市场举行的金枪鱼拍卖会上，一条重达200公斤左右的蓝鳍金枪鱼仅以100万日元成交，而去年同期的成交价则高达300万日元 ', 4, '海鲜', '排放核污水？日本海产单价下跌，订单量跌一半，自己人都不吃 ');
 INSERT INTO `price` VALUES (4, '鸡蛋', 9356, '吨', 'price-4.jpg', '昨日鸡蛋期货2311合约盘中最高触及4678元/500千克的阶段性高点,本轮累计涨幅超17%。 造成鸡蛋价格上涨的原因主要有两个方面。首先,7、8月份天气持续炎热,导致鸡蛋产能出现阶段性不足,供给偏紧,从而推动了蛋价上涨。高温天气对鸡只生产造成一定影响,鸡蛋产量相对减少,供应相对紧张,市场供需失衡成为价格上涨的重要原因之一。 其次,受到近期日本核污水排海事件的影响,海产品消费锐减,这也对鸡蛋市场带来了影响。 ', 2, '食品', '日本排放核污水28天后,没想到鸡蛋大幅涨价 ');
 
-DROP TABLE IF EXISTS `news_comment`;
-CREATE TABLE `news_comment`  (
-  `comment_id` int(0) NOT NULL AUTO_INCREMENT COMMENT '标号',
-  `comment_news` int(0) NOT NULL COMMENT '所属新闻',
-  `comment_user` int(0) NOT NULL COMMENT '来源用户',
-  `comment_content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '评论内容',
-  `comment_time` datetime(0) NOT NULL COMMENT '评论时间',
-  PRIMARY KEY (`comment_id`) USING BTREE,
-  INDEX `comment_news_fk`(`comment_news`) USING BTREE,
-  INDEX `comment_use_fk`(`comment_user`) USING BTREE,
-  CONSTRAINT `comment_news_fk` FOREIGN KEY (`comment_news`) REFERENCES `news` (`news_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `comment_use_fk` FOREIGN KEY (`comment_user`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '新闻评论' ROW_FORMAT = Dynamic;
-show tables;
--- ----------------------------
--- Records of news_comment
--- ----------------------------
-INSERT INTO `news_comment` VALUES (1, 18, 1, '抵制核污水，从我们做起！！！', '2023-11-22 10:33:57');
-INSERT INTO `news_comment` VALUES (2, 19, 1, '此次会议坚决不能通过。', '2023-11-24 10:16:49');
-INSERT INTO `news_comment` VALUES (3, 20, 1, '日本应按照意见书，中止核污水入海！', '2023-11-24 10:17:52');
-INSERT INTO `news_comment` VALUES (4, 21, 1, '一起拉响警报！！！', '2023-11-24 10:21:16');
-INSERT INTO `news_comment` VALUES (5,22, 1, '抵制核污水，从我们做起！！！', '2023-11-24 10:21:50');
-INSERT INTO `news_comment` VALUES (6, 23, 1, '韩国的抵制值得借鉴', '2023-11-25 09:29:42');
-INSERT INTO `news_comment` VALUES (7, 24, 3, '坚决不吃日本海鲜', '2023-12-04 09:45:21');
-INSERT INTO `news_comment` VALUES (8, 25, 3, '大家不必大量屯盐', '2023-12-04 09:46:55');
-INSERT INTO `news_comment` VALUES (9, 26, 4, '保护海洋生态系统', '2023-12-08 16:24:00');
 
 DROP TABLE IF EXISTS `news_source`;
 CREATE TABLE `news_source`  (
@@ -118,15 +79,11 @@ CREATE TABLE `news_source`  (
   PRIMARY KEY (`source_name`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '新闻来源' ROW_FORMAT = Dynamic;
 
--- ----------------------------
--- Records of news_source
--- ----------------------------
 INSERT INTO `news_source` VALUES ('中国新闻网', '中国新闻网是中国新闻网络中心旗下的综合新闻网站，提供时政、国际、社会、财经、大湾区、华人、文体等各类新闻资讯，以及视频、直播、图片、创意等多媒体创作', 'https://space.bilibili.com/3494350480738883?spm_id_from=333.337.0.0', 'https://weibo.com/u/1784473157','https://www.douyin.com/user/MS4wLjABAAAAzj4u2OtfzpiT_YUAEIGfMXgAww1aW_Cqaat7ZDWtNGo',  'China_network.jpg');
 INSERT INTO `news_source` VALUES ('央视网', '央视网新闻频道提供最新的国内外新闻、评论、视频、财经、体育、教育等资讯，以及央视各频道的直播、节目单、栏目、片库等内容。关注人民领袖习近平联播+、央视快评、央视 …', 'https://space.bilibili.com/33775467?spm_id_from=333.337.0.0', 'https://s.weibo.com/weibo?q=%E5%A4%AE%E8%A7%86%E7%BD%91','https://www.douyin.com/user/MS4wLjABAAAA4vgRHGrSG6rPlffm3RvwHWL8TBq7O4YnM5jHUNXz0-s', 'CCTV_network.jpg');
 INSERT INTO `news_source` VALUES ('人民网', '人民网，是世界十大报纸之一《人民日报》建设的以新闻为主的大型网上信息发布平台，也是互联网上最大的中文和多语种新闻网站之一。 作为国家重点新闻网 …', 'https://live.bilibili.com/8178490?live_from=84002&spm_id_from=333.337.0.0','https://weibo.com/u/2286908003', 'https://www.douyin.com/user/MS4wLjABAAAA-Hb-4F9Y2cX_D0VZapSrRQ71BarAcaE1AUDI5gkZBEY', 'people_network.png');
 
 DROP TABLE IF EXISTS `news`;
-select* from news;
 CREATE TABLE `news`  (
   `news_id` int(0) NOT NULL AUTO_INCREMENT COMMENT '标号',
   `news_title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '标题',
@@ -140,10 +97,7 @@ CREATE TABLE `news`  (
   INDEX `news_source_fk`(`news_source`) USING BTREE,
   CONSTRAINT `news_source_fk` FOREIGN KEY (`news_source`) REFERENCES `news_source` (`source_name`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
-create database yiiadvanced;
--- ----------------------------
--- Records of news
--- ----------------------------
+
 INSERT INTO `news` VALUES (1, '核污水岂能“一排了之”', '2021年4月，日本政府宣布，将采取排放入海的方式解决与日俱增的核污水问题。为给核污水正名，日本政府还曾联系市民团体，要求停止使用“核污水”的说法，改为使用“核处理水”，以达到“洗白”目的。日本政府还就排海方案大力进行“公关”。这样的劣迹很难让人相信东电公司会将...','101.png','2023-06-16','人民网','核污水岂能“一排了之”', 1011);
 INSERT INTO `news` VALUES (2, '日本福岛核污水排海隧道竣工，待处理核污水已累积133万吨', '日本政府将根据国际原子能机构关于核污水安全的综合报告内容，最终决定何时开始排海。','102.png' ,'2023-06-27','央视网','日本政府将根据国际原子能机构关于核污水安全的综合报告内容，最终决定何时开始排海。',523);
 INSERT INTO `news` VALUES (3, '国际热评：日本应正视福岛核污水问题 停止混淆视听', '日本政府将根据国际原子能机构关于核污水安全的综合报告内容，最终决定何时开始排海。','103.png' ,'2023-06-27','央视网','日本政府将根据国际原子能机构关于核污水安全的综合报告内容，最终决定何时开始排海。',523);
@@ -253,6 +207,30 @@ INSERT INTO `news` VALUES (21, '日本7800吨核污水全部排入海洋 第二�
 
 　　据北海道函馆市议会事务局介绍，当天，在全体会议上进行表决时，以14对12的多数赞成票通过了该意见书。','4.png','2023-12-01','人民网','核污水岂能“一排了之”', 1011);
 
+DROP TABLE IF EXISTS `news_comment`;
+CREATE TABLE `news_comment`  (
+  `comment_id` int(0) NOT NULL AUTO_INCREMENT COMMENT '标号',
+  `comment_news` int(0) NOT NULL COMMENT '所属新闻',
+  `comment_user` int(0) NOT NULL COMMENT '来源用户',
+  `comment_content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT '评论内容',
+  `comment_time` datetime(0) NOT NULL COMMENT '评论时间',
+  PRIMARY KEY (`comment_id`) USING BTREE,
+  INDEX `comment_news_fk`(`comment_news`) USING BTREE,
+  INDEX `comment_use_fk`(`comment_user`) USING BTREE,
+  CONSTRAINT `comment_news_fk` FOREIGN KEY (`comment_news`) REFERENCES `news` (`news_id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `comment_use_fk` FOREIGN KEY (`comment_user`) REFERENCES `user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '新闻评论' ROW_FORMAT = Dynamic;
+
+INSERT INTO `news_comment` VALUES (1, 18, 1, '抵制核污水，从我们做起！！！', '2023-11-22 10:33:57');
+INSERT INTO `news_comment` VALUES (2, 19, 1, '此次会议坚决不能通过。', '2023-11-24 10:16:49');
+INSERT INTO `news_comment` VALUES (3, 20, 1, '日本应按照意见书，中止核污水入海！', '2023-11-24 10:17:52');
+INSERT INTO `news_comment` VALUES (4, 21, 1, '一起拉响警报！！！', '2023-11-24 10:21:16');
+INSERT INTO `news_comment` VALUES (5,22, 1, '抵制核污水，从我们做起！！！', '2023-11-24 10:21:50');
+INSERT INTO `news_comment` VALUES (6, 23, 1, '韩国的抵制值得借鉴', '2023-11-25 09:29:42');
+INSERT INTO `news_comment` VALUES (7, 24, 3, '坚决不吃日本海鲜', '2023-12-04 09:45:21');
+INSERT INTO `news_comment` VALUES (8, 25, 3, '大家不必大量屯盐', '2023-12-04 09:46:55');
+INSERT INTO `news_comment` VALUES (9, 26, 4, '保护海洋生态系统', '2023-12-08 16:24:00');
+
 DROP TABLE IF EXISTS `historical_activity`;
 CREATE TABLE `historical_activity`  (
   `id` int(0) NOT NULL AUTO_INCREMENT,
@@ -262,10 +240,7 @@ CREATE TABLE `historical_activity`  (
   `operation` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
-select *from historical_activity;
--- ----------------------------
--- Records of historical_activity
--- ----------------------------
+
 INSERT INTO `historical_activity` VALUES (1, 1, '2023-12-01 11:42:31', 'news', 'update');
 INSERT INTO `historical_activity` VALUES (2, 2, '2023-12-03 11:43:24', 'qa', 'delete');
 INSERT INTO `historical_activity` VALUES (5, 1, '2023-12-03 21:38:12', 'news', 'update');
@@ -278,9 +253,6 @@ INSERT INTO `historical_activity` VALUES (11, 1, '2023-12-08 10:23:17', 'news', 
 INSERT INTO `historical_activity` VALUES (12, 3, '2023-12-08 15:11:23', 'news_comment', 'update');
 INSERT INTO `historical_activity` VALUES (13, 4, '2023-12-10 00:03:32', 'price', 'update');
 
--- ----------------------------
--- Table structure for historical_views
--- ----------------------------
 DROP TABLE IF EXISTS `historical_views`;
 CREATE TABLE `historical_views`  (
   `id` int(0) NOT NULL AUTO_INCREMENT,
@@ -289,9 +261,6 @@ CREATE TABLE `historical_views`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
--- ----------------------------
--- Records of historical_views
--- ----------------------------
 INSERT INTO `historical_views` VALUES (1, '2023-12-01', 122);
 INSERT INTO `historical_views` VALUES (2, '2023-12-01', 157);
 INSERT INTO `historical_views` VALUES (3, '2023-12-02', 223);
@@ -310,13 +279,9 @@ INSERT INTO `historical_views` VALUES (14, '2023-12-12', 114);
 DROP TABLE IF EXISTS `databasemigration`;
 CREATE TABLE `databasemigration` (
   `version` varchar(180) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
-  `application_date` int DEFAULT NULL,
+  `apply_time` int DEFAULT NULL,
   PRIMARY KEY (`version`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
-
---
--- Dumping data for table `databasemigration`
---
 
 INSERT INTO `databasemigration` VALUES ('m111123_123123_base',1864624059),('m432563_243423_init',1864624059),('m764534_333245_base',1864624059);
 
@@ -330,9 +295,6 @@ CREATE TABLE `qa`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = MyISAM AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
--- ----------------------------
--- Records of qa
--- ----------------------------
 INSERT INTO `qa` VALUES (1, 'Q：核污水是什么？', 'A：核污水是指受到核污染的水体，通常由核事故引起。', 10, 00000000001);
 INSERT INTO `qa` VALUES (2, 'Q：核污水是如何产生的？', 'A：核污水往往源于核事故，事故导致核电站安全措施受损，使得不期望的水体（例如渗入场址的地下水）与放射性物质直接接触而被污染。', 10, 00000000002);
 INSERT INTO `qa` VALUES (3, 'Q: 核污水排海对经济发展的影响？', 'A：核污染水排放不仅对渔业产生直接冲击，还对整个经济系统造成了广泛的间接影响：旅游业受损: 污染影响美丽的海滩和沿海地区，可能损害旅游业，降低了旅游业的收入。', 10, 00000000003);
@@ -351,11 +313,10 @@ CREATE TABLE `views`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
--- ----------------------------
--- Records of motto
--- ----------------------------
 INSERT INTO `views` VALUES (1, '英国', '英国外交发展部发表声明称，英方支持日本政府采取核污水排海行动，对此驻英国使馆发言人表明立场，谴责日本将核污染风险转嫁给全世界，这是不负责任的行为。如果英国还是一个负责任的国家，就应该明确发对和谴责日本的错误行为。', '../web/statics/assets/img/testimonials/views-1.jpg', '采访');
 INSERT INTO `views` VALUES (2, '加拿大', '许多加拿大产业者表示坚决反对日本核污水排海，这将对海洋生物和海洋环境造成极大的危害。日本将核污水排海是极不负责的行为。', '../web/statics/assets/img/testimonials/views-2.jpg', '街头采访');
 INSERT INTO `views` VALUES (3, '中国', '中方反对福岛核污染水排海的立场是一贯、明确的。日本福岛核污染水排海事关人类健康，事关全球海洋环境，事关国际公共利益。', '../web/statics/assets/img/testimonials/views-3.jpg', '记者发布会');
 INSERT INTO `views` VALUES (4, '新加坡', '新加坡居民表示，并不相信核污水排海会没有影响。至于日本的水产，也将严格进行放射物质检测，确保其安全性。', '../web/statics/assets/img/testimonials/views-4.jpg', '街头采访');
 INSERT INTO `views` VALUES (5, '美国', '美国布林肯针对日本投放核废水一事给出明确的态度。他声称美国对于日本的所作所为感到“满意”，也就是认同的他们的作为，其理由无他，就是单单因为国际原子能机构的鉴定。', '../web/statics/assets/img/testimonials/views-5.jpg', '记者发布会');
+
+SET FOREIGN_KEY_CHECKS = 1;
