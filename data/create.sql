@@ -1,2 +1,2 @@
 DROP DATABASE IF EXISTS yii2advanced;
-CREATE DATABASE yii2advanced;
+CREATE DATABASE yii2advanced;   
